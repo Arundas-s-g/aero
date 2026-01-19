@@ -7,11 +7,11 @@ import styles from "./AeroNav.module.css";
 import clsx from "clsx";
 
 const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Team", href: "/team" },
-    { name: "Events", href: "/events" },
-    { name: "Achievements", href: "/achievements" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "Home", href: "/", mobileSize: "1.5rem" },
+    { name: "Team", href: "/team", mobileSize: "1.5rem" },
+    { name: "Events", href: "/events", mobileSize: "1.5rem" },
+    { name: "Achievements", href: "/achievements", mobileSize: "1.35rem" },
+    { name: "Gallery", href: "/gallery", mobileSize: "1.5rem" },
 ];
 
 export default function AeroNav() {
@@ -32,13 +32,14 @@ export default function AeroNav() {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <nav
-            style={{ zIndex: 999999 }}
-            className={clsx(
-                styles.nav,
-                isScrolled ? styles.scrolled : styles.initial
-            )}
-        >
+        <>
+            <header
+                style={{ zIndex: 999997 }}
+                className={clsx(
+                    styles.nav,
+                    isScrolled ? styles.scrolled : styles.initial
+                )}
+            >
             <div className={styles.container}>
                 {/* Brand Name: AEROUNWIRED */}
                 <Link
@@ -85,23 +86,47 @@ export default function AeroNav() {
                         </svg>
                     )}
                 </button>
-            </div>
+                </div>
+            </header>
 
             {/* Mobile Menu Overlay */}
+            <div 
+                className={clsx(styles.backdrop, isMenuOpen && styles.backdropOpen)}
+                onClick={() => setIsMenuOpen(false)}
+            />
+
             <div className={clsx(styles.mobileMenu, isMenuOpen && styles.mobileMenuOpen)}>
+                {/* Close Button Inside Sidebar */}
+                <button 
+                    className={styles.closeButton} 
+                    onClick={() => setIsMenuOpen(false)}
+                    aria-label="Close Menu"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ width: '2rem', height: '2rem' }}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
                 <div className={styles.mobileLinks}>
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className={styles.mobileNavLink}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.href;
+                        return (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={styles.mobileNavLink}
+                                style={{ 
+                                    fontSize: link.mobileSize || '2rem',
+                                    color: isActive ? '#3b82f6' : 'white'
+                                }}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </div>
             </div>
-        </nav>
+        </>
     );
 }

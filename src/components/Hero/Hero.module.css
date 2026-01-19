@@ -50,7 +50,7 @@
 @media (max-width: 767px) {
   .textOverlay {
     justify-content: flex-start;
-    padding-top: 20vh; /* Position 30vh-35vh from top as requested */
+    padding-top: 15vh; /* Position 30vh-35vh from top as requested */
     padding-bottom: 0;
   }
 }

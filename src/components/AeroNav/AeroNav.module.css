@@ -5,7 +5,7 @@
   width: 100%;
   transition: all 300ms ease;
   border-bottom: 1px solid transparent;
-  z-index: 999999;
+  /* z-index handled in JS or below */
 }
 
 .scrolled {
@@ -35,9 +35,10 @@
 }
 
 .container {
-  max-width: 80rem; /* max-w-7xl */
-  margin: 0 auto;
-  padding: 0 1.5rem; /* px-6 */
+  width: 100%;
+  max-width: none; /* Removed max-w-7xl constraint */
+  margin: 0;
+  padding: 0 3rem; /* px-12 for edge spacing */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -136,11 +137,17 @@
   width: 60vw;
   height: 100vh;
   background-color: rgba(5, 5, 5, 0.95); /* Dark background */
+  width: 60vw;
+  height: 100vh;
+  background-color: rgba(5, 5, 5, 0.95); /* Dark background */
   backdrop-filter: blur(12px);
-  z-index: 999998;
+  z-index: 999999; /* Topmosst */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start; /* Left align wrapper */
+  justify-content: flex-start; /* Top align wrapper */
+  padding-top: 8rem; /* Start below header area */
+  padding-left: 2rem; /* Left spacing next to blue border */
   
   /* Animation: Slide from Right */
   transform: translateX(100%);
@@ -151,15 +158,50 @@
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
 }
 
+.backdrop {
+  position: fixed;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 999998; /* Below sidebar (999999) but above nav (999997) */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.backdropOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .mobileMenuOpen {
   transform: translateX(0);
   pointer-events: auto;
 }
 
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem; /* Top-right of the sidebar */
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1000001;
+}
+
+.closeButton:hover {
+  color: #ef4444; /* red-500 on hover for close */
+}
+
 .mobileLinks {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Left align items */
   gap: 2rem;
 }
 

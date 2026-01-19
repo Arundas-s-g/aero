@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +18,7 @@ const EVENTS = [
 
 export default function EventsPreview() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const trackRef = useRef(null);
 
     // Mobile detection
     const [isMobile, setIsMobile] = useState(false);
@@ -29,11 +30,23 @@ export default function EventsPreview() {
     }, []);
 
     const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1));
+        if (isMobile && trackRef.current) {
+            const firstCard = trackRef.current.firstElementChild;
+            const scrollAmount = firstCard ? firstCard.clientWidth + 32 : 292; // 32px gap
+            trackRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        } else {
+            setCurrentIndex((prev) => (prev + 1));
+        }
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1));
+        if (isMobile && trackRef.current) {
+            const firstCard = trackRef.current.firstElementChild;
+            const scrollAmount = firstCard ? firstCard.clientWidth + 32 : 292;
+            trackRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        } else {
+            setCurrentIndex((prev) => (prev - 1));
+        }
     };
 
     return (
@@ -54,6 +67,7 @@ export default function EventsPreview() {
             {/* Carousel Viewport */}
             <div className={styles.carouselViewport}>
                 <motion.div
+                    ref={trackRef}
                     className={styles.carouselTrack}
                     animate={isMobile ? undefined : {
                         x: -(currentIndex * 292) // 260w + 32gap = 292

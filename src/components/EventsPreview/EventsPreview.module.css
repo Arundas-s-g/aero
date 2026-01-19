@@ -136,6 +136,12 @@
   transition: all 0.5s ease;
 }
 
+@media (max-width: 767px) {
+  .cardContainer {
+    border-radius: 0.75rem;
+  }
+}
+
 .cardWrapper:hover .cardContainer {
   /* Removed border color change and translate since the wrapper/info handles movement or specific effects */
   transform: translateY(-0.25rem);
@@ -178,6 +184,12 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .infoContainer {
+    border-radius: 0.75rem;
+  }
 }
 
 /* Modern spinning border support */
@@ -225,6 +237,12 @@
   
   /* Always visible */
   opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .infoContainer::before {
+    border-radius: 0.75rem;
+  }
 }
 
 .cardWrapper:hover .infoContainer {
