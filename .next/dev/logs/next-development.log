@@ -1,35 +1,6 @@
-[00:00:02.926] Server  LOG     ✓ Ready in 2.1s
-[00:01:20.558] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:01:59.619] Server  LOG     ✓ Compiled in 45ms
-[00:02:25.202] Server  LOG     ✓ Compiled in 39ms
-[00:02:30.161] Server  LOG     ✓ Compiled in 360ms
-[00:02:31.540] Server  LOG     ✓ Compiled in 21ms
-[00:02:39.817] Server  LOG     ✓ Compiled in 27ms
-[00:03:23.963] Browser WARN    Image with src "/events/fluid_dynamics.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:23.963] Browser WARN    Image with src "/events/icarus.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:23.963] Browser WARN    Image with src "/events/icarus2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:23.963] Browser WARN    Image with src "/events/albatross.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:23.963] Browser WARN    Image with src "/events/drone.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:23.963] Browser WARN    Image with src "/events/aircraft.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:24.475] Browser WARN    Image with src "/achievements/NITK.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:24.475] Browser WARN    Image with src "/achievements/ADDC_25.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:24.993] Browser WARN    Image with src "/achievements/DDC_25.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:24.993] Browser WARN    Image with src "/achievements/ADDC_23.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:24.993] Browser WARN    Image with src "/achievements/ADC_2019.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:24.993] Browser WARN    Image with src "/achievements/ADC_17.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:24.993] Browser WARN    Image with src "/achievements/ADC_2016.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:04:23.810] Browser WARN    Image with src "/gallery/gallery_2.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:23.811] Browser WARN    Image with src "/gallery/gallery_1.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:23.811] Browser WARN    Image with src "/gallery/gallery_3.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:26.639] Browser WARN    Image with src "/gallery/gallery_4.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:27.105] Browser WARN    Image with src "/gallery/gallery_5.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:27.105] Browser WARN    Image with src "/gallery/gallery_6.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:27.215] Browser WARN    Image with src "/gallery/gallery_7.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:27.215] Browser WARN    Image with src "/gallery/gallery_8.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:27.489] Browser WARN    Image with src "/gallery/gallery_10.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:27.489] Browser WARN    Image with src "/gallery/gallery_9.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:04:28.549] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:05:01.638] Server  LOG     ✓ Compiled in 64ms
-[00:05:42.648] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:06:00.558] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:06:08.035] Server  LOG     ✓ Compiled in 28ms
+[00:00:01.045] Server  LOG     ✓ Ready in 697ms
+[00:00:14.075] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:14.283] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:02:23.798] Server  LOG     ✓ Compiled in 273ms
+[00:03:49.987] Server  LOG     ✓ Compiled in 52ms
+[00:06:03.783] Server  LOG     ✓ Compiled in 9ms

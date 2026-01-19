@@ -10,7 +10,7 @@ const navLinks = [
     { name: "Home", href: "/", mobileSize: "1.5rem" },
     { name: "Team", href: "/team", mobileSize: "1.5rem" },
     { name: "Events", href: "/events", mobileSize: "1.5rem" },
-    { name: "Achievements", href: "/achievements", mobileSize: "1.35rem" },
+    { name: "Achievements", href: "/achievements", mobileSize: "1.25rem" },
     { name: "Gallery", href: "/gallery", mobileSize: "1.5rem" },
 ];
 

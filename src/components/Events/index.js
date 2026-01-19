@@ -45,9 +45,9 @@ export default function Events() {
                         {EVENTS.map((event, i) => {
                             // Puzzled Pattern
                             let spanClass = styles.spanNormal;
-                            if (i === 0) spanClass = styles.spanLarge; // 2x2
-                            else if (i === 3) spanClass = styles.spanWide; // 2x1
-                            else if (i === 4) spanClass = styles.spanTall; // 1x2
+                            if (i === 0) spanClass = styles.spanLarge; // 2x2 (Square)
+                            // Removed Wide/Tall to ensure 1:1 aspect ratio on all devices
+                            // Remaining items default to 1x1 (Square)
 
                             return (
                                 <div
