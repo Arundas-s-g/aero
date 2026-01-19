@@ -1,141 +1,35 @@
-[00:00:02.695] Server  LOG     ✓ Ready in 2.1s
-[00:00:13.649] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:13.850] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:17.548] Browser WARN    Image with src "/events/icarus.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:17.548] Browser WARN    Image with src "/events/icarus2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:17.548] Browser WARN    Image with src "/events/fluid_dynamics.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:17.548] Browser WARN    Image with src "/events/drone.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:17.548] Browser WARN    Image with src "/events/albatross.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:17.548] Browser WARN    Image with src "/events/aircraft.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:18.389] Browser WARN    Image with src "/achievements/NITK.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:18.389] Browser WARN    Image with src "/achievements/ADDC_25.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:22.447] Browser WARN    Image with src "/achievements/DDC_25.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:22.448] Browser WARN    Image with src "/achievements/ADC_2019.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:22.448] Browser WARN    Image with src "/achievements/ADDC_23.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:22.859] Browser WARN    Image with src "/achievements/ADC_2016.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:22.860] Browser WARN    Image with src "/achievements/ADC_17.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:43.021] Server  LOG     ✓ Compiled in 405ms
-[00:04:12.535] Server  LOG     ✓ Compiled in 388ms
-[00:05:16.943] Server  LOG     ✓ Compiled in 31ms
-[00:05:46.654] Browser WARN    Image with src "/gallery/gallery_2.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:46.654] Browser WARN    Image with src "/gallery/gallery_1.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:46.654] Browser WARN    Image with src "/gallery/gallery_3.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:46.654] Browser WARN    Image with src "/gallery/gallery_4.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:47.167] Browser WARN    Image with src "/gallery/gallery_5.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:47.364] Browser WARN    Image with src "/gallery/gallery_6.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:47.364] Browser WARN    Image with src "/gallery/gallery_8.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:47.364] Browser WARN    Image with src "/gallery/gallery_7.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:48.344] Browser WARN    Image with src "/gallery/gallery_9.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:48.345] Browser WARN    Image with src "/gallery/gallery_10.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:05:51.307] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:05:58.439] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:08:41.582] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:09:58.533] Server  LOG     ✓ Compiled in 44ms
-[00:10:38.048] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:11:32.877] Server  LOG     ✓ Compiled in 56ms
-[00:14:22.050] Server  LOG     ✓ Compiled in 157ms
-[00:14:34.433] Server  LOG     ✓ Compiled in 57ms
-[00:14:49.712] Server  LOG     ✓ Compiled in 28ms
-[00:14:49.766] Server  LOG     ✓ Compiled in 42ms
-[00:15:34.743] Server  LOG     ✓ Compiled in 22ms
-[00:15:45.580] Server  LOG     ✓ Compiled in 63ms
-[00:16:40.837] Server  LOG     ✓ Compiled in 9ms
-[00:16:52.953] Server  LOG     ✓ Compiled in 19ms
-[00:17:34.736] Server  LOG     ✓ Compiled in 17ms
-[00:17:46.757] Server  LOG     ✓ Compiled in 19ms
-[00:17:58.427] Server  LOG     ✓ Compiled in 14ms
-[00:18:10.583] Server  LOG     ✓ Compiled in 18ms
-[00:18:23.744] Server  LOG     ✓ Compiled in 17ms
-[00:18:29.563] Server  LOG     ✓ Compiled in 15ms
-[00:19:32.405] Server  LOG     ✓ Compiled in 26ms
-[00:19:34.483] Server  LOG     ✓ Compiled in 40ms
-[00:20:07.999] Server  LOG     ✓ Compiled in 27ms
-[00:21:08.014] Server  LOG     ✓ Compiled in 30ms
-[00:21:52.439] Server  LOG     ✓ Compiled in 15ms
-[00:22:12.527] Server  LOG     ✓ Compiled in 18ms
-[00:22:22.346] Server  LOG     ✓ Compiled in 13ms
-[00:22:52.827] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:23:34.963] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:23:40.574] Server  LOG     ✓ Compiled in 155ms
-[00:23:40.713] Browser ERROR   ./src/components/AeroNav/index.js:121:5
-Parsing ecmascript source code failed
-  119 |         </>
-  120 |     );
-> 121 |     );
-      |     ^
-  122 | }
-  123 |
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/AeroNav/index.js
-    ./src/app/layout.js
-[00:23:41.909] Server  LOG     ✓ Compiled in 43ms
-[00:23:42.015] Browser ERROR   ./src/components/AeroNav/index.js:121:5
-Parsing ecmascript source code failed
-  119 |         </>
-  120 |     );
-> 121 |     );
-      |     ^
-  122 | }
-  123 |
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/AeroNav/index.js
-    ./src/app/layout.js
-[00:23:54.102] Server  LOG     ✓ Compiled in 47ms
-[00:23:54.209] Browser ERROR   ./src/components/AeroNav/index.js:90:19
-Parsing ecmascript source code failed
-  88 |                 </button>
-  89 |                 </div>
-> 90 |             </nav>
-     |                   ^
-> 91 |
-     | ^
-> 92 |             {/* Mobile Menu Overlay */}
-     | ^^^^^^^^^^^^^
-  93 |             <div 
-  94 |                 className={clsx(styles.backdrop, isMenuOpen && styles.backdropOpen)}
-  95 |                 onClick={() => setIsMenuOpen(false)}
-
-Expected '</', got 'jsx text (
-
-            )'
-
-Import trace:
-  Server Component:
-    ./src/components/AeroNav/index.js
-    ./src/app/layout.js
-[00:25:33.449] Server  LOG     ✓ Compiled in 21ms
-[00:25:36.370] Server  LOG     ✓ Compiled in 30ms
-[00:25:38.275] Server  LOG     ✓ Compiled in 33ms
-[00:26:10.769] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:11.046] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:26:25.253] Browser WARN    Image with src "/events/fluid_dynamics.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:26:25.254] Browser WARN    Image with src "/events/icarus.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:26:25.254] Browser WARN    Image with src "/events/albatross.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:26:25.254] Browser WARN    Image with src "/events/drone.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:26:25.254] Browser WARN    Image with src "/events/icarus2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:26:26.185] Browser WARN    Image with src "/achievements/DDC_25.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:26:26.186] Browser WARN    Image with src "/achievements/ADC_2019.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:26:26.649] Browser WARN    Image with src "/gallery/gallery_1.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.124] Browser WARN    Image with src "/gallery/gallery_3.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.124] Browser WARN    Image with src "/gallery/gallery_2.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.124] Browser WARN    Image with src "/gallery/gallery_4.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.124] Browser WARN    Image with src "/gallery/gallery_5.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.124] Browser WARN    Image with src "/gallery/gallery_6.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.124] Browser WARN    Image with src "/gallery/gallery_8.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.124] Browser WARN    Image with src "/gallery/gallery_7.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.336] Browser WARN    Image with src "/gallery/gallery_9.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:27.637] Browser WARN    Image with src "/gallery/gallery_10.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:26:28.314] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:26:39.471] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:27:39.787] Browser WARN    Image with src "/events/aircraft.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:27:44.632] Server  LOG     ✓ Compiled in 13ms
-[00:27:53.822] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
-[00:28:01.923] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
+[00:00:02.926] Server  LOG     ✓ Ready in 2.1s
+[00:01:20.558] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:01:59.619] Server  LOG     ✓ Compiled in 45ms
+[00:02:25.202] Server  LOG     ✓ Compiled in 39ms
+[00:02:30.161] Server  LOG     ✓ Compiled in 360ms
+[00:02:31.540] Server  LOG     ✓ Compiled in 21ms
+[00:02:39.817] Server  LOG     ✓ Compiled in 27ms
+[00:03:23.963] Browser WARN    Image with src "/events/fluid_dynamics.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:23.963] Browser WARN    Image with src "/events/icarus.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:23.963] Browser WARN    Image with src "/events/icarus2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:23.963] Browser WARN    Image with src "/events/albatross.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:23.963] Browser WARN    Image with src "/events/drone.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:23.963] Browser WARN    Image with src "/events/aircraft.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:24.475] Browser WARN    Image with src "/achievements/NITK.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:24.475] Browser WARN    Image with src "/achievements/ADDC_25.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:24.993] Browser WARN    Image with src "/achievements/DDC_25.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:24.993] Browser WARN    Image with src "/achievements/ADDC_23.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:24.993] Browser WARN    Image with src "/achievements/ADC_2019.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:24.993] Browser WARN    Image with src "/achievements/ADC_17.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:24.993] Browser WARN    Image with src "/achievements/ADC_2016.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:04:23.810] Browser WARN    Image with src "/gallery/gallery_2.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:23.811] Browser WARN    Image with src "/gallery/gallery_1.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:23.811] Browser WARN    Image with src "/gallery/gallery_3.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:26.639] Browser WARN    Image with src "/gallery/gallery_4.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:27.105] Browser WARN    Image with src "/gallery/gallery_5.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:27.105] Browser WARN    Image with src "/gallery/gallery_6.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:27.215] Browser WARN    Image with src "/gallery/gallery_7.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:27.215] Browser WARN    Image with src "/gallery/gallery_8.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:27.489] Browser WARN    Image with src "/gallery/gallery_10.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:27.489] Browser WARN    Image with src "/gallery/gallery_9.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:04:28.549] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
+[00:05:01.638] Server  LOG     ✓ Compiled in 64ms
+[00:05:42.648] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
+[00:06:00.558] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/team/placeholder.jpg" "received" null
+[00:06:08.035] Server  LOG     ✓ Compiled in 28ms

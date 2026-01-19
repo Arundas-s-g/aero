@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -17,36 +16,90 @@ const EVENTS = [
 ];
 
 export default function EventsPreview() {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const trackRef = useRef(null);
+    const [extendedEvents, setExtendedEvents] = useState([]);
 
-    // Mobile detection
-    const [isMobile, setIsMobile] = useState(false);
+    // Create a large list for "infinite" feel
     useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < 768);
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
+        // 20 copies * 6 items = 120 items
+        const copies = new Array(20).fill(EVENTS).flat();
+        setExtendedEvents(copies);
     }, []);
 
-    const nextSlide = () => {
-        if (isMobile && trackRef.current) {
-            const firstCard = trackRef.current.firstElementChild;
-            const scrollAmount = firstCard ? firstCard.clientWidth + 32 : 292; // 32px gap
-            trackRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        } else {
-            setCurrentIndex((prev) => (prev + 1));
+    const handleInfiniteScroll = () => {
+        const track = trackRef.current;
+        if (!track) return;
+        
+        // We have 20 sets of events. 
+        // We want to keep the user roughly in the middle 10 sets.
+        // If they scroll to the first 5 sets, jump forward by 10 sets.
+        // If they scroll to the last 5 sets, jump backward by 10 sets.
+        
+        const totalSets = 20;
+        const scrollWidth = track.scrollWidth;
+        const clientWidth = track.clientWidth;
+        
+        const singleSetWidth = scrollWidth / totalSets;
+        const jumpWidth = singleSetWidth * 10; // Jump 10 sets
+        
+        const threshold = singleSetWidth * 5; // 5 sets buffer from edges
+        
+        if (track.scrollLeft < threshold) {
+            // Too close to start -> Jump forward
+            track.scrollLeft += jumpWidth;
+        } else if (track.scrollLeft + clientWidth > scrollWidth - threshold) {
+            // Too close to end -> Jump backward
+            track.scrollLeft -= jumpWidth;
         }
     };
 
-    const prevSlide = () => {
-        if (isMobile && trackRef.current) {
-            const firstCard = trackRef.current.firstElementChild;
-            const scrollAmount = firstCard ? firstCard.clientWidth + 32 : 292;
-            trackRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-        } else {
-            setCurrentIndex((prev) => (prev - 1));
+    // Initial Scroll to Middle - Robust check
+    useEffect(() => {
+        if (!trackRef.current || extendedEvents.length === 0) return;
+
+        const initializeScroll = () => {
+            const track = trackRef.current;
+            if (track) {
+                const totalWidth = track.scrollWidth;
+                const middlePosition = totalWidth / 2 - track.clientWidth / 2;
+                
+                // Only set if we are currently near 0 (initial state)
+                if (track.scrollLeft < 100) {
+                   track.scrollLeft = middlePosition;
+                }
+            }
+        };
+
+        // Try immediately and after a short delay to ensure layout is ready
+        initializeScroll();
+        const timeoutId = setTimeout(initializeScroll, 50);
+        
+        return () => clearTimeout(timeoutId);
+    }, [extendedEvents]);
+
+    const scroll = (direction) => {
+        const track = trackRef.current;
+        if (!track) return;
+
+        const scrollAmount = 300; 
+        
+        // Safety check: if we are stuck at edges, force jump before scrolling
+        const totalSets = 20;
+        const singleSetWidth = track.scrollWidth / totalSets;
+        const jumpWidth = singleSetWidth * 10;
+        
+        if (track.scrollLeft < 10 && direction === "left") {
+             // Stuck at start and trying to go left? Jump forward first
+             track.scrollLeft += jumpWidth;
+        } else if (track.scrollLeft + track.clientWidth > track.scrollWidth - 10 && direction === "right") {
+             // Stuck at end and trying to go right? Jump backward first
+             track.scrollLeft -= jumpWidth;
         }
+
+        track.scrollBy({ 
+            left: direction === "left" ? -scrollAmount : scrollAmount, 
+            behavior: "smooth" 
+        });
     };
 
     return (
@@ -64,19 +117,15 @@ export default function EventsPreview() {
                 </div>
             </div>
 
-            {/* Carousel Viewport */}
-            <div className={styles.carouselViewport}>
-                <motion.div
-                    ref={trackRef}
-                    className={styles.carouselTrack}
-                    animate={isMobile ? undefined : {
-                        x: -(currentIndex * 292) // 260w + 32gap = 292
-                    }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                >
-                    {/* Render a large set of duplicates to simulate infinity for a long time */}
-                    {[...EVENTS, ...EVENTS, ...EVENTS, ...EVENTS, ...EVENTS].map((event, i) => (
-                        <motion.div
+            {/* Carousel Viewport - Now the scroll container */}
+            <div 
+                className={styles.carouselViewport} 
+                ref={trackRef}
+                onScroll={handleInfiniteScroll}
+            >
+                <div className={styles.carouselTrack}>
+                    {extendedEvents.map((event, i) => (
+                        <div
                             key={`${event.id}-${i}`}
                             className={styles.cardWrapper}
                         >
@@ -99,20 +148,27 @@ export default function EventsPreview() {
                                     {event.title}
                                 </h3>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
+            </div>
 
-                {/* Arrow Navigation (Desktop) */}
-                <button
-                    onClick={prevSlide}
+            {/* Arrow Navigation (Desktop) - Outside viewport relative to section */}
+             {/* We position them mostly relative to the viewport container via CSS in original module, 
+                 but here we can just place them relative to section or adjust module. 
+                 Original styles.navButton had absolute positioning. 
+                 We need to ensure they sit on top of the scrolling content.
+            */}
+            <div className={styles.carouselControlsDesktop}>
+                 <button
+                    onClick={() => scroll("left")}
                     className={`${styles.navButton} ${styles.navLeft}`}
                     aria-label="Previous Slide"
                 >
                     <ChevronLeft size={32} />
                 </button>
                 <button
-                    onClick={nextSlide}
+                    onClick={() => scroll("right")}
                     className={`${styles.navButton} ${styles.navRight}`}
                     aria-label="Next Slide"
                 >
@@ -124,14 +180,14 @@ export default function EventsPreview() {
             <div className={styles.mobileControlsContainer}>
                 <div style={{ display: 'flex', gap: '1rem' }}>
                     <button
-                        onClick={prevSlide}
+                        onClick={() => scroll("left")}
                         className={styles.controlButton}
                         aria-label="Previous Slide"
                     >
                         <ChevronLeft size={20} />
                     </button>
                     <button
-                        onClick={nextSlide}
+                        onClick={() => scroll("right")}
                         className={styles.controlButton}
                         aria-label="Next Slide"
                     >
