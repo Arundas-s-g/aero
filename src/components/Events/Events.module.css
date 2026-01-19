@@ -1,0 +1,284 @@
+.section {
+  position: relative;
+  width: 100%;
+  background-color: var(--background);
+  color: white;
+  padding: 6rem 1rem; /* py-24 px-4 */
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 3rem; /* px-12 */
+  }
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem; /* gap-24 */
+}
+
+.subSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* gap-8 */
+}
+
+.subSectionLarge {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* gap-12 */
+}
+
+.heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  letter-spacing: 0.1em; /* tracking-widest */
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1rem; /* mb-4 */
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #3b82f6, #a855f7);
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3.75rem; /* text-6xl */
+  }
+}
+
+.headingSecondary {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #3b82f6, #a855f7);
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .headingSecondary {
+    font-size: 3rem; /* text-5xl */
+  }
+}
+
+.bannerCard {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  background-color: #171717; /* bg-neutral-900 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem; /* rounded-xl */
+  overflow: hidden;
+  position: relative;
+}
+
+.bannerGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(30, 58, 138, 0.2), rgba(88, 28, 135, 0.2));
+}
+
+.bannerContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* p-8 */
+  text-align: center;
+}
+
+.bannerTitle {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 768px) {
+  .bannerTitle {
+    font-size: 3rem; /* text-5xl */
+  }
+}
+
+.bannerSubtitle {
+  margin-top: 1rem;
+  color: #bfdbfe; /* text-blue-200 */
+  font-size: 1.125rem; /* text-lg */
+  letter-spacing: 0.025em; /* tracking-wide */
+  text-transform: uppercase;
+}
+
+.bannerButton {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem; /* px-8 py-3 */
+  background-color: white;
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.bannerButton:hover {
+  background-color: #3b82f6; /* hover:bg-blue-500 */
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; /* gap-4 for mobile */
+  grid-auto-flow: dense;
+  grid-auto-rows: 250px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    gap: 1.5rem; /* gap-6 for desktop */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+  }
+}
+
+.gridCard {
+  position: relative;
+  /* aspect-ratio removed, handled by grid rows/spans */
+  background-color: #171717; /* bg-neutral-900 */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* border-white/5 */
+  border-radius: 1rem; /* rounded-2xl for premium feel */
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Span Classes */
+/* Mobile (Default) - 2 Columns Puzzled */
+.spanNormal {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.spanWide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.spanTall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.spanLarge {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Tablet/Desktop overrides if column count changes */
+/* Since 640px/768px is also roughly 2 cols, these defaults work fine. */
+/* At 1024px (4 cols), we might want Wide to be 2 cols (works), Large 2 cols (works). */
+/* So the definitions are largely universal for 2+ column grids! */
+
+@media (min-width: 1024px) {
+  /* Ensure consistent behavior on large screens */
+  .spanWide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .spanTall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  .spanLarge {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.gridCard:hover {
+  border-color: rgba(59, 130, 246, 0.3); /* hover:border-blue-500/30 */
+  transform: scale(1.01);
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eventImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gridCard:hover .eventImage {
+  transform: scale(1.05);
+}
+
+.gridPlaceholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #262626, #0a0a0a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridItemText {
+  color: rgba(255, 255, 255, 0.05);
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 900;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem; /* p-6 */
+}
+
+.gridCard:hover .gridOverlay {
+  opacity: 1;
+}
+
+.gridTitle {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+  color: white;
+}
+
+.gridSubtitle {
+  font-size: 0.875rem; /* text-sm */
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.5rem;
+  font-weight: 300;
+}

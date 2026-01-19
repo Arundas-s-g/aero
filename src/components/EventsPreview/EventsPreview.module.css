@@ -1,0 +1,336 @@
+.section {
+  padding: 6rem 0; /* py-24 */
+  background-color: var(--background); /* bg-[#050505] */
+  position: relative;
+  overflow: hidden;
+}
+
+.gradientLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(30, 58, 138, 0.3), transparent); /* via-blue-900/30 */
+}
+
+.headerContainer {
+  width: 100%;
+  padding: 0 2rem; /* px-8 increased from px-4 */
+  margin: 0 auto;
+  margin-bottom: 3rem; /* mb-12 */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1280px; /* container */
+}
+
+@media (min-width: 768px) {
+  .headerContainer {
+    padding: 0 4rem; /* px-16 for desktop */
+  }
+}
+
+.headerText {
+  max-width: 42rem; /* max-w-2xl */
+  text-align: right;
+}
+
+.heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  margin-bottom: 1rem; /* mb-4 */
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #3b82f6, #a855f7); /* blue-500 to purple-500 */
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3rem; /* text-5xl */
+  }
+}
+
+.subheading {
+  color: rgba(255, 255, 255, 0.6); /* text-white/60 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+.carouselViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 2rem; /* gap-8 */
+  padding: 0 1rem; /* px-4 */
+}
+
+@media (max-width: 767px) {
+  .carouselTrack {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 2rem; /* Hide scrollbar potentially or give space */
+    scrollbar-width: none; /* Firefox */
+  }
+  .carouselTrack::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+}
+
+@media (min-width: 768px) {
+  .carouselTrack {
+    padding: 0 calc((100vw - 1280px) / 2 + 1rem); /* centering logic */
+  }
+}
+
+.cardWrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 75vw; /* Responsive mobile width */
+  max-width: 280px;
+}
+
+@media (max-width: 767px) {
+    .cardWrapper {
+        scroll-snap-align: center;
+    }
+}
+@media (min-width: 450px) {
+    .cardWrapper {
+        width: 240px;
+    }
+}
+ 
+/* Actually wait, 280px is what it was. User said "too big". 
+   iPhone SE is 320px wide. 280px leaves 20px padding. That's fine?
+   Maybe user meant "scale down"? Or purely responsiveness.
+   Let's try 75vw for mobile to be safe.
+*/
+.cardWrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 50vw; /* Reduced from 75vw */
+  max-width: 240px; /* Reduced from 280px */
+}
+
+@media (min-width: 768px) {
+  .cardWrapper {
+    width: 260px; /* Desktop fixed width */
+    max-width: none;
+  }
+}
+
+.cardContainer {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.5rem; /* rounded-3xl */
+  /* border: 1px solid rgba(255, 255, 255, 0.05); removed border from image container as it might look cleaner without it if text has border, or keep it */
+  border: none; 
+  transition: all 0.5s ease;
+}
+
+.cardWrapper:hover .cardContainer {
+  /* Removed border color change and translate since the wrapper/info handles movement or specific effects */
+  transform: translateY(-0.25rem);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.cardWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+/* Old widget removed, replaced by infoContainer */
+/* Premium Glass Info Container */
+.infoContainer {
+  margin-top: 0.75rem; 
+  /* Fixed Height for consistency */
+  height: 5.5rem; 
+  width: 100%;
+  
+  /* Glassmorphism Base */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* Border & Shape */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem; /* rounded-2xl */
+  
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.25rem; /* horizontal padding */
+  
+  /* Transitions */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Modern spinning border support */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderSpin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Gradient Border Effect via pseudo-element */
+.infoContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem; 
+  padding: 1.5px; /* slightly thicker for visibility */
+  
+  /* Rotating border with transparency */
+  background: conic-gradient(
+    from var(--angle), 
+    transparent 20%, 
+    #3b82f6 40%, 
+    #a855f7 50%, 
+    #3b82f6 60%, 
+    transparent 80%
+  );
+  
+  animation: borderSpin 4s linear infinite;
+  
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  
+  /* Always visible */
+  opacity: 1;
+}
+
+.cardWrapper:hover .infoContainer {
+  transform: translateY(-0.25rem);
+  /* Theme matching background with transparency for glass effect */
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(168, 85, 247, 0.3));
+  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.3); /* slightly stronger glow */
+}
+
+/* Removed hover trigger for opacity since it is now always 1 */
+
+.date {
+  color: rgba(255, 255, 255, 0.9); /* text-white/90 */
+  font-size: 0.625rem; /* text-[10px] */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* tracking-widest */
+}
+
+.title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700;
+  color: white;
+  line-height: 1.25;
+}
+
+.navButton {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  padding: 1rem;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navButton {
+    display: none;
+  }
+}
+
+.navButton:hover {
+  background-color: #2563eb; /* bg-blue-600 */
+  border-color: #2563eb;
+}
+
+.navLeft {
+  left: 1rem;
+}
+
+.navRight {
+  right: 1rem;
+}
+
+/* Mobile Controls */
+.mobileControlsContainer {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+}
+
+@media (min-width: 768px) {
+  .mobileControlsContainer {
+    display: none;
+  }
+}
+
+.controlButton {
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controlButton:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.viewAll {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.viewAll:hover {
+  color: #93c5fd; /* text-blue-300 */
+}

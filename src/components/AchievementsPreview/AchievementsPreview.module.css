@@ -1,0 +1,217 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 6rem 1rem; /* py-24 px-4 */
+  background-color: #0a0a0a; /* bg-[#0a0a0a] */
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 3rem; /* px-12 */
+  }
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* gap-12 */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* gap-4 */
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .header {
+    text-align: left;
+  }
+}
+
+.heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* tracking-widest */
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #3b82f6, #a855f7); /* blue-500 to purple-500 */
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3.75rem; /* text-6xl */
+  }
+}
+
+.subheading {
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 42rem; /* max-w-2xl */
+}
+
+@media (min-width: 768px) {
+  .subheading {
+    align-self: flex-start;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; /* gap-4 */
+  grid-auto-flow: dense;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    gap: 1.5rem; /* gap-6 for desktop */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  /* Removed fixed width/height/aspect-ratio */
+  background-color: #171717; /* bg-neutral-900 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem; /* rounded-xl */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  min-height: 200px; /* Ensure logical minimum height */
+}
+
+/* Span Classes */
+/* Mobile - 2 Columns Puzzled */
+.spanNormal {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.spanWide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.spanTall {
+  grid-column: span 1;
+  grid-row: span 2;
+  min-height: 300px;
+}
+
+.spanLarge {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 300px;
+}
+
+@media (min-width: 1024px) {
+  /* Ensure consistent behavior on large screens */
+  .spanWide {
+    grid-column: span 2;
+  }
+  .spanTall {
+    grid-row: span 2;
+  }
+  .spanLarge {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.cardImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 40%, transparent 100%);
+}
+
+.card:hover .cardOverlay {
+  opacity: 0.8;
+}
+
+.cardContent {
+  position: relative;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 3;
+}
+
+.description {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Color variations neutralized */
+.overlayBlue { background-color: transparent; }
+.overlayPurple { background-color: transparent; }
+.overlayRed { background-color: transparent; }
+.overlayGreen { background-color: transparent; }
+.overlayNeutral { background-color: transparent; }
+
+
+
+.year {
+  font-size: 3rem; /* text-5xl increased */
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1); /* Keep distinct but subtle OR make it pop. User said "add year", implying they don't see it. */
+  /* Let's Try text-stroke or just brighter color */
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  line-height: 1;
+}
+
+.title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+  margin-top: auto; /* Push to bottom if flex col */
+  z-index: 10;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,178 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 300ms ease;
+  border-bottom: 1px solid transparent;
+  z-index: 999999;
+}
+
+.scrolled {
+  background-color: transparent; /* As per original */
+  padding: 1rem 0; /* py-4 */
+  border-bottom-color: rgba(59, 130, 246, 0.1); /* border-blue-500/10 */
+  box-shadow: none;
+  /* Original logic seemed to rely on glass effect elsewhere or jus transparent header? 
+     "Transparent even on scroll" comment implies it stays transparent. 
+     If glass needed, add backdrop-filter: blur(10px); 
+     I'll stick to translation of existing classes. */
+  backdrop-filter: blur(8px); /* Typical for scrolled nav */
+}
+
+.initial {
+  background-color: transparent;
+  padding: 1rem 0; /* py-4 */
+  border-bottom-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .initial {
+    background-color: rgba(5, 5, 5, 0.95); /* Visible header on mobile */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* px-6 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.5rem; /* text-2xl */
+  letter-spacing: -0.05em; /* tracking-tighter */
+  text-transform: uppercase;
+  position: relative;
+  z-index: 999999;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  display: flex;
+}
+
+.brand:hover {
+  color: #60a5fa; /* text-blue-400 */
+}
+
+.brandAero {
+  color: #3b82f6; /* text-blue-500 */
+}
+
+.brandUnwired {
+  color: white;
+}
+
+.desktopNav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+    gap: 2rem; /* gap-8 */
+  }
+}
+
+.navLink {
+  font-size: 0.875rem; /* text-sm */
+  letter-spacing: 0.025em; /* tracking-wide */
+  text-transform: uppercase;
+  transition: all 300ms ease;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .navLink {
+    font-size: 1.25rem; /* text-xl - Increased as requested */
+  }
+}
+
+.navLink:hover {
+  color: #60a5fa; /* hover:text-blue-400 */
+  transform: scale(1.05); /* hover:scale-105 */
+}
+
+.activeLink {
+  color: #3b82f6; /* text-blue-500 */
+  font-weight: 800; /* font-extrabold */
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+.mobileButton {
+  display: block;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1000000; /* Above overlay */
+}
+
+@media (min-width: 768px) {
+  .mobileButton {
+    display: none;
+  }
+}
+
+.mobileButton:hover {
+  color: #60a5fa;
+}
+
+/* Mobile Menu Overlay */
+/* Mobile Menu Sidebar (60vw Right) */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60vw;
+  height: 100vh;
+  background-color: rgba(5, 5, 5, 0.95); /* Dark background */
+  backdrop-filter: blur(12px);
+  z-index: 999998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Animation: Slide from Right */
+  transform: translateX(100%);
+  opacity: 1; /* Always opaque, just off-screen */
+  pointer-events: none; /* Non-interactive when closed */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobileNavLink {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobileNavLink:hover {
+  color: #3b82f6;
+}

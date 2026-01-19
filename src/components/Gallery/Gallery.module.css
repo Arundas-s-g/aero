@@ -1,0 +1,165 @@
+.section {
+  position: relative;
+  width: 100%;
+  background-color: var(--background);
+  color: white;
+  padding: 6rem 1rem; /* py-24 px-4 */
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 3rem; /* px-12 */
+  }
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* gap-12 */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3.75rem;
+  }
+}
+
+.subheading {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  letter-spacing: 0.025em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  grid-auto-flow: dense;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  background-color: #171717; /* bg-neutral-900 */
+  border-radius: 0.75rem; /* rounded-xl */
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 200px;
+}
+
+.spanSmall {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.spanLarge {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 300px;
+}
+
+.spanTall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.spanWide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+  .spanLarge {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .spanWide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Aspect Ratio / Height Helpers - for Image component we used fill, so container needs height or aspect-ratio */
+/* Since we have different files, let's use a default height and allow auto if natural?
+   Actually, usually with next/image fill, parent needs relative + fixed/aspect.
+   If we want masonry effect with unknown aspect ratios, standard next/image width/height prop is better than fill.
+   But I used 'fill' in JS. So I need to enforce aspect ratio on the card wrapper or use 'responsive' layout which is tricky with fill.
+*/
+/* Image styles */
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.galleryImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlayText {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Aspect Ratio Utilities (simulated since we replace aspect-* tailwind/css variables) */
+.square { aspect-ratio: 1 / 1; }
+.portrait { aspect-ratio: 3 / 4; }
+.landscape { aspect-ratio: 4 / 3; }

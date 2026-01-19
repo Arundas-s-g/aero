@@ -1,0 +1,129 @@
+.section {
+  position: relative;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 6rem 1.5rem; /* py-24 px-6 */
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 3rem; /* md:px-12 */
+  }
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem; /* gap-12 */
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    gap: 6rem; /* md:gap-24 */
+  }
+}
+
+.textColumn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 768px) {
+  .textColumn {
+    width: 50%;
+  }
+}
+
+.heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  letter-spacing: 0.1em; /* tracking-widest */
+  text-transform: uppercase;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #3b82f6, #a855f7);
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3.75rem; /* text-6xl */
+  }
+}
+
+.paragraph {
+  font-size: 1rem; /* text-base */
+  font-weight: 300; /* font-light */
+  line-height: 1.625; /* leading-relaxed */
+  letter-spacing: 0.025em; /* tracking-wide */
+  color: rgba(255, 255, 255, 0.8);
+  text-align: justify;
+}
+
+@media (min-width: 768px) {
+  .paragraph {
+    font-size: 1.125rem; /* text-lg */
+  }
+}
+
+.button {
+  padding: 0.75rem 2rem; /* px-8 py-3 */
+  border: 1px solid #3b82f6; /* border-blue-500 */
+  color: #3b82f6;
+  background-color: transparent;
+  width: fit-content;
+  font-size: 0.875rem; /* text-sm */
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* aspect-video */
+  background-color: #171717; /* bg-neutral-900 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem; /* rounded-lg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .imageWrapper {
+    width: 50%;
+    aspect-ratio: 1 / 1; /* md:aspect-square */
+  }
+}
+
+/* Placeholder geometric pattern simulation */
+.placeholderGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(30, 58, 138, 0.2), #050505, #050505);
+  opacity: 0.5;
+}
+
+.placeholderText {
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  z-index: 10;
+}

@@ -1,0 +1,179 @@
+.section {
+  position: relative;
+  width: 100%;
+  background-color: var(--background);
+  padding: 0 0 6rem 0; /* Zero top padding */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* gap-6 reduced */
+  z-index: 20;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0; /* Restore desktop padding */
+    gap: 2rem;
+  }
+}
+
+.scrollContainer {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.track {
+  display: flex;
+  gap: 1.5rem; /* Gap between cards */
+  padding-right: 1.5rem; /* Gap between the two tracks */
+  min-width: 100%;
+  flex-shrink: 0;
+  animation: scroll 20s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .track {
+     gap: 2rem;
+     padding-right: 2rem;
+     animation-duration: 30s; /* Slower on desktop */
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Define angle property for conic gradient animation */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderSpin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.heading {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem; /* text-xs */
+  text-align: center;
+}
+/* ... */
+.card {
+  position: relative;
+  width: 140px; /* Smaller mobile width */
+  aspect-ratio: 16 / 9; 
+  border-radius: 0.5rem; 
+  border: none;
+  background-color: #171717; 
+  flex-shrink: 0;
+  overflow: hidden; 
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 200px;
+  }
+}
+
+/* Gradient Border Effect */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem; 
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--angle), 
+    transparent 20%, 
+    #3b82f6 40%, 
+    #a855f7 50%, 
+    #3b82f6 60%, 
+    transparent 80%
+  );
+  animation: borderSpin 4s linear infinite;
+  
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  
+  opacity: 1;
+}
+
+.cardGradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .cardGradient {
+  opacity: 0.6;
+}
+
+.cardContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardText {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+  font-size: 0.875rem; /* text-sm */
+}
+
+/* Gradients (Unused but kept for reference if needed, or can be deleted) */
+.blueGradient { background: linear-gradient(to bottom right, #1e3a8a, #1e40af); }
+.purpleGradient { background: linear-gradient(to bottom right, #581c87, #6b21a8); }
+.redGradient { background: linear-gradient(to bottom right, #7f1d1d, #991b1b); }
+.greenGradient { background: linear-gradient(to bottom right, #14532d, #166534); }
+.yellowGradient { background: linear-gradient(to bottom right, #713f12, #854d0e); }
+
+.logoImage {
+  object-fit: contain;
+  padding: 1rem; /* p-4 to give breathing room */
+  /* filter: grayscale(100%) opacity(0.7); Removed for color logos */
+  transition: all 0.3s ease;
+}
+
+.card:hover .logoImage {
+  transform: scale(1.1);
+}
